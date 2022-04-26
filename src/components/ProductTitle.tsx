@@ -1,9 +1,11 @@
+import cars from '../../public/api/cars.json'
 import React from "react";
 import { FcNext } from 'react-icons/fc';
 
 export const ProductTitle: React.FC = () => {
-  return (
-      <>
+    console.log(cars); 
+    return (
+        <>
         <p className="body-type">SUV</p>
         <div className="model-details">
             <p className="model-name">XC60 Recharge</p>
