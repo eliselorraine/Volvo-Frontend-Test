@@ -2,6 +2,7 @@ import React from "react";
 import { FcNext } from 'react-icons/fc';
 import Image from 'next/image'
 import type { Car } from '../../types'
+import Link from 'next/link'
 
 export const Card: React.FC<Car> = ({ id, modelName, modelType, imageUrl, bodyType }: Car) => { 
     return (
@@ -19,14 +20,17 @@ export const Card: React.FC<Car> = ({ id, modelName, modelType, imageUrl, bodyTy
             height="200"
         />
         <div className="links">
-        <a className="links-learn">
+        <Link href={`/learn/${id}`}>
+            <a>
             <p>LEARN</p>
-            <FcNext className="link-icon"/>
-        </a>
-        <a className="links-shop">
-            <p>SHOP</p>
-            <FcNext className="link-icon"/>
-        </a>
+
+            </a>
+            {/* <FcNext className="link-icon"/> */}
+        </Link>
+        {/* <Link className="links-shop">
+            SHOP
+            {/* <FcNext className="link-icon"/> */}
+        {/* </Link> */}
         </div>
       </div>
   );
