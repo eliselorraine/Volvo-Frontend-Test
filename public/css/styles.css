@@ -64,3 +64,14 @@ body {
 .link-icon {
   width: 12px; 
 }
+
+.card {
+  margin: 0px 10px 0px 10px; 
+}
+
+.carousel {
+  display: flex; 
+  flex-direction: row; 
+  height: 500px; 
+  
+}
