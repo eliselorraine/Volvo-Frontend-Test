@@ -1,12 +1,34 @@
-import React from 'react'; 
+import React, { useRef, useEffect } from 'react'; 
+import useEmblaCarousel from 'embla-carousel-react/components';
 import { Card } from './Card'; 
 import type { Car } from '../../types'
 import { NextPage } from 'next';
 import Image from 'next/image'; 
-import { IconButton } from 'vcc-ui'; 
 import NextButton from '../../docs/chevron-circled.svg'
 
 const Carousel: NextPage<{ carsList: Car[] }> = ({ carsList }) => {
+    // const carouselRef = useRef(null); 
+
+    // useEffect(() => {
+    //     console.log(carouselRef)
+    // }, [carouselRef])
+
+    // const nextButtonClick = () => {
+    //     if(carouselRef.current) {
+    //         const scrollWidth = carouselRef.current.scrollWidth; 
+    //         carouselRef.current.scrollBy({left: scrollWidth/carsList.length, behavior: 'smooth'})
+    //     }
+    //     return; 
+    // }
+    // const backButtonClick = () => {
+    //     if(carouselRef.current) {
+    //         const scrollWidth = carouselRef.current.scrollWidth; 
+    //         carouselRef.current.scrollBy({left: -scrollWidth/carsList.length, behavior: 'smooth'})
+    //     }
+    //     return; 
+    // }
+    // ref={carouselRef} add this to the div
+
     return (
     <div className="carousel">
         <div className="carousel-wrapper">
@@ -24,8 +46,8 @@ const Carousel: NextPage<{ carsList: Car[] }> = ({ carsList }) => {
             </ul>
         </div>
         <div className="button-wrapper">
-            <Image className="button back-button" src={NextButton} alt='back button' />
-            <Image className="button next-button" src={NextButton} alt='next button' />
+            <button className="button" onClick={backButtonClick}><Image className="back-button" src={NextButton} alt='back button' /></button>
+            <button className="button" onClick={nextButtonClick}><Image className="next-button" src={NextButton} alt='next button' /></button>
         </div>
     </div>
     )

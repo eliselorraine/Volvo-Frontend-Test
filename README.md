@@ -45,3 +45,10 @@ Two extra SVG icons are also provided by our designer which are stored under `do
 - If you use our design system component library, [VCC-UI](https://vcc-ui.vercel.app/)
 - If you add a filter bar on the top to filter cars by `bodyType`
 # frontendTest
+
+
+Need to do: 
+Carousel for both desktop and mobile
+Maybe include home link in the shop and learn pages
+fix UI library issues
+add a filter bar

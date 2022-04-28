@@ -9,6 +9,7 @@
     "@types/jest": "^27.0.1",
     "@types/react": "^17.0.22",
     "@types/react-dom": "^17.0.9",
+    "embla-carousel-react": "^6.2.0",
     "fs": "^0.0.1-security",
     "next": "^11.1.2",
     "react": "^17.0.0",

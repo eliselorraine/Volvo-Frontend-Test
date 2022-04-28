@@ -12,69 +12,58 @@ body {
   margin-bottom: 20px; 
 }
 
-.model-name {
-  padding-right: 10px;
-  margin-top: 10px;
-}
-
-.model-type {
-  margin-top: 10px;
-}
-
 .model-image {
-  width: 300px;
   margin-top: 10px; 
 }
 
-.links {
-  display: flex;
-  justify-content: center;
-  width: 300px; 
-  margin-top: 20px; 
-}
-
-.link {
-  display: flex; 
-  text-decoration: none;
-  padding-right: 10px; 
-  padding-left: 10px; 
-}
-
-/* .link:hover {
-  color: #141414; 
-} */
-
-.link-text {
-  padding-right: 7px; 
-}
 
 .card {
   list-style: none; 
   margin: 0px 10px 0px 10px; 
   width: 100%; 
+  min-width: 310px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+  max-width: 300px;
 }
 
 .carousel {
-  margin: 0; 
+  /* margin: 10vh 10vw 0 10vw;  */
   display: flex; 
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .carousel-wrapper {
-  width: 90%; 
-  max-width: 90%; 
+  width: 100%; 
+  max-width: 100%; 
   overflow: auto; 
+  overflow-x: hidden;
   margin: 0; 
   padding: 0; 
 }
 
 .carousel-list {
   display: flex; 
-  flex-direction: row; 
+  flex-direction: row;
   list-style: none; 
   padding: 0; 
   margin: 0; 
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px; 
+}
+
+.button {
+  background-color: transparent;
+  border-style: none;
 }
 
 .back-button {
