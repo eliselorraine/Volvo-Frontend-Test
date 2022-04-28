@@ -72,3 +72,22 @@ body {
 .back-button {
   transform: scaleX(-1);
 }
+
+.dots {
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  border-style: none; 
+  margin: 30px 5px 0px 5px; 
+  background-color: #d6d3d3;
+  border-radius: 50%;
+  height: 10px; 
+  width: 10px; 
+}
+
+.active {
+  background-color: #141414; 
+}
