@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'; 
+import React, { useCallback } from 'react'; 
 import useEmblaCarousel from 'embla-carousel-react';
 import { Card } from './Card'; 
 import type { Car } from '../../types'
@@ -7,8 +7,11 @@ import Image from 'next/image';
 import NextButton from '../../docs/chevron-circled.svg'
 
 const Carousel: NextPage<{ carsList: Car[] }> = ({ carsList }) => {
-    const [emblaRef] = useEmblaCarousel(); 
-    
+    const [emblaRef, emblaApi] = useEmblaCarousel(); 
+
+    const scrollPrev = useCallback(() => {    if (emblaApi) emblaApi.scrollPrev()  }, [emblaApi])
+    const scrollNext = useCallback(() => {    if (emblaApi) emblaApi.scrollNext()  }, [emblaApi])
+
     return (
         <div className="carousel">
         <div className="carousel-wrapper" ref={emblaRef}>
@@ -26,8 +29,8 @@ const Carousel: NextPage<{ carsList: Car[] }> = ({ carsList }) => {
             </ul>
         </div>
         <div className="button-wrapper">
-            <button className="button" onClick={() => console.log('back')}><Image className="back-button" src={NextButton} alt='back button' /></button>
-            <button className="button" onClick={() => console.log('next')}><Image className="next-button" src={NextButton} alt='next button' /></button>
+            <button className="button" onClick={scrollPrev}><Image className="back-button" src={NextButton} alt='back button' /></button>
+            <button className="button" onClick={scrollNext}><Image className="next-button" src={NextButton} alt='next button' /></button>
         </div>
     </div>
     )
@@ -57,46 +60,3 @@ const Carousel: NextPage<{ carsList: Car[] }> = ({ carsList }) => {
 // const [emblaRef] = useEmblaCarousel(); 
 
 export default Carousel; 
-
-// const currentOffsetXRef = useRef(0); 
-// const [offsetX, setOffsetX, offsetXRef] = useStateRef(0); 
-// const startXRef = useRef(0); 
-
-// const onTouchMove = (e: TouchEvent | MouseEvent) => {
-//     const currentX = getTouchEventData(e).clientX; 
-// }
-
-// const onTouchEnd = () => {
-//     window.removeEventListener('touchend', onTouchEnd);
-//     window.removeEventListener('touchmove', onTouchMove);
-//     window.removeEventListener('mouseup', onTouchEnd);
-//     window.removeEventListener('mousemove', onTouchMove);
-// }
-
-// const onTouchStart = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
-//     window.addEventListener('touchmove', onTouchMove);
-//     window.addEventListener('touchend', onTouchEnd);
-//     window.addEventListener('mousemove', onTouchMove);
-//     window.addEventListener('mouseup', onTouchEnd);
-// }
-
-// const onMouseMove = (e: MouseEvent) => {
-//     const currentX = e.clientX;
-//     const diff = getRefValue(startXRef) - currentX;
-//     const newOffsetX = getRefValue(currentOffsetXRef) - diff;
-
-//     setOffsetX(newOffsetX);
-// }
-
-// const onMouseUp = () => {
-//     window.removeEventListener('mouseup', onMouseUp);
-//     window.removeEventListener('mousemove', onMouseMove);
-// };
-
-// const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-//     currentOffsetXRef.current = getRefValue(offsetXRef); 
-//     startXRef.current = e.clientX; 
-
-//     window.addEventListener('mousemove', onMouseMove); 
-//     window.addEventListener('mouseup', onMouseUp); 
-// }
