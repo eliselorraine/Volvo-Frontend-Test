@@ -4,7 +4,6 @@ import type { Car } from '../../types';
 import { Card } from '../../src/components/Card' 
 
 const Learn: NextPage<any> = ({ carInfo }: any) => { 
-    console.log(carInfo.id)
     return (
         <div>
             <Card 

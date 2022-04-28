@@ -1,17 +1,15 @@
-import { Card } from "../src/components/Card";
 import cars from '../public/api/cars.json'
 import React from "react";
 import { NextPage, GetStaticProps } from "next";
 import type { Car } from '../types';
+import Carousel from "../src/components/Carousel"
 
 // make sure to use good HTMl (add a Head element from Next)
 
 const HomePage: NextPage<{ cars: Car[] }> = ({ cars }) => {
-  return (
+    return (
     <React.StrictMode>
-      <div className="carousel">
-        {cars.map(car => <Card key={car.id} id={car.id} modelName={car.modelName} modelType={car.modelType} bodyType={car.bodyType} imageUrl={car.imageUrl} />)}
-      </div>
+      <Carousel carsList={cars} />
     </React.StrictMode>
   );
 }
