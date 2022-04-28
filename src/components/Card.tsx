@@ -35,8 +35,9 @@ export const Card: React.FC<Car> = ({ id, modelName, modelType, imageUrl, bodyTy
             alt="product image" 
             width="300" 
             height="200"
+            draggable={false}
         />
-        <View direction="row" justifyContent="center" spacing={2}>
+        <View direction="row" justifyContent="center" spacing={4}>
             <Link href={`/learn/${id}`} arrow="right">LEARN</Link>
             <Link href={`/shop/${id}`} arrow="right">SHOP</Link>
         </View>

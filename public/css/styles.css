@@ -4,7 +4,7 @@ body {
 
 @media only screen and (min-width: 600px) {
   .model-details {
-    display: flex;
+    display: flex; 
   }
 }
 
@@ -13,15 +13,16 @@ body {
 }
 
 .model-image {
+  display: flex; 
   margin-top: 10px; 
 }
 
-
 .card {
   list-style: none; 
-  margin: 0px 10px 0px 10px; 
-  width: 100%; 
-  min-width: 310px;
+  position: relative; 
+  flex: 0 0 100%; 
+  margin-right: 20px; 
+  max-width: 300px;
 }
 
 .links {
@@ -41,13 +42,15 @@ body {
 .carousel-wrapper {
   width: 100%; 
   max-width: 100%; 
-  overflow: auto; 
-  overflow-x: hidden;
+  overflow: hidden; 
+  /* touch-action: pan-y; */
+  /* overflow-x: hidden; */
   margin: 0; 
   padding: 0; 
 }
 
 .carousel-list {
+  min-width: 100%; 
   display: flex; 
   flex-direction: row;
   list-style: none; 
