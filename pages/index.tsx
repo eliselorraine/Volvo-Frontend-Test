@@ -1,8 +1,8 @@
 import cars from "../public/api/cars.json";
 import React from "react";
 import { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
 import type { Car } from "../types";
+import Head from "next/head";
 import Carousel from "../src/components/Carousel";
 
 const HomePage: NextPage<{ cars: Car[] }> = ({ cars }) => {
