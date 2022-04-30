@@ -40,7 +40,7 @@ export const Card: React.FC<Car> = ({
       <Image
         className="model-image"
         src={imageUrl}
-        alt="product image"
+        alt={modelName}
         width="300"
         height="200"
         draggable={false}
